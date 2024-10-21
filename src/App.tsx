@@ -4,7 +4,7 @@ import { queryClient } from './queryClient';
 function App() {
     return (
         <QueryClientProvider client={queryClient}>
-            <div>alskdj</div>
+            <div>test</div>
         </QueryClientProvider>
     );
 }

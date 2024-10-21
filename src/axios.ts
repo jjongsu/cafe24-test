@@ -1,9 +1,9 @@
-import axios from 'axios';
-import { makeGet, makePatch, makePost } from './utils';
+// import axios from 'axios';
+// import { makeGet, makePatch, makePost } from './utils';
 
-const client = axios.create({
-    baseURL: 'https://hjs1002.cafe24api.com/',
-});
+// const client = axios.create({
+//     baseURL: 'https://hjs1002.cafe24api.com/',
+// });
 
 // const makeGetTI = makeGet(client);
 // const makePostTI = makePost(client);
