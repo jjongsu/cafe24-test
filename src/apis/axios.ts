@@ -7,6 +7,7 @@ export const accessTokenAxios = axios.create({
     headers: {
         Authorization: 'Basic TFdmVjVmQm0xRUoxdUtmUHdzT0o1QSA6IDNxNHJPMHVKT1J0aXY2UTdtNEoxYUQ=',
         'Content-Type': 'application/x-www-form-urlencoded',
+        'Access-Control-Allow-Origin': '*',
     },
     withCredentials: true,
 });
@@ -14,11 +15,15 @@ export const accessTokenAxios = axios.create({
 export const makePostAccessToken = makePost(accessTokenAxios);
 
 export const postAccessToken = (body: { code: string }) =>
-    makePostAccessToken(`api/v2/oauth/token`, {
-        grant_type: 'authorization_code',
-        code: body.code,
-        redirect_uri: 'https://cafe24-hjs1002.vercel.app',
-    });
+    makePostAccessToken(
+        `api/v2/oauth/token`,
+        {
+            grant_type: 'authorization_code',
+            code: body.code,
+            redirect_uri: 'https://cafe24-hjs1002.vercel.app',
+        },
+        { headers: { 'Access-Control-Allow-Origin': '*' }, withCredentials: true }
+    );
 
 // const makeGetTI = makeGet(client);
 // const makePostTI = makePost(client);
