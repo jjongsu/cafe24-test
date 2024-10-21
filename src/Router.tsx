@@ -26,12 +26,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '',
-                element: <></>,
+                element: <BoardPage />,
                 hasErrorBoundary: true,
-                errorElement: <ErrorPage />,
-                loader: () => {
-                    throw new Error();
-                },
+                // errorElement: <ErrorPage />,
+                // loader: () => {
+                //     throw new Error();
+                // },
             },
             {
                 path: '*',
