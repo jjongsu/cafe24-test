@@ -7,7 +7,6 @@ export const accessTokenAxios = axios.create({
     headers: {
         Authorization: 'Basic TFdmVjVmQm0xRUoxdUtmUHdzT0o1QSA6IDNxNHJPMHVKT1J0aXY2UTdtNEoxYUQ=',
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Access-Control-Allow-Origin': '*',
     },
     withCredentials: true,
 });
