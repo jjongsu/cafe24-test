@@ -1,5 +1,7 @@
 //axios 관련 util
 import type { AxiosInstance, AxiosRequestConfig } from 'axios';
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 /**
  * R: Response
@@ -45,3 +47,7 @@ export const makeTokenHeaderController = (client: AxiosInstance, initialToken?: 
     }
     return controller;
 };
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}
