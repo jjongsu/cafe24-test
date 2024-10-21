@@ -9,6 +9,7 @@ export const accessTokenAxios = axios.create({
         'Content-Type': 'application/x-www-form-urlencoded',
         'Access-Control-Allow-Origin': '*',
     },
+    withCredentials: true,
 });
 
 export const makePostAccessToken = makePost(accessTokenAxios);
