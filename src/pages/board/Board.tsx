@@ -24,7 +24,7 @@ const findHref = (ref: React.RefObject<HTMLAnchorElement>) => {
 export default function Board() {
     const ATagRef = useRef<HTMLAnchorElement>(null);
     // const navigate = useNavigate();
-    const { mutate } = useMutation({ onSuccess: () => console.log('success'), mutationFn: postAccessToken });
+    const { mutateAsync } = useMutation({ onSuccess: () => console.log('success'), mutationFn: postAccessToken });
 
     const hasCode = useCallback(() => {
         const url = new URL(window.location.href);
@@ -33,9 +33,9 @@ export default function Board() {
         const code = urlParams.get('code');
         if (code) {
             // navigate('/board', { replace: true });
-            mutate({ code });
+            mutateAsync({ code });
         }
-    }, [mutate]);
+    }, [mutateAsync]);
 
     useEffect(() => {
         findHref(ATagRef);

@@ -6,6 +6,7 @@ import LoadingLottie from '@components/LoadingLottie';
 
 const BoardPage = lazy(() => import('@pages/board'));
 const AuthPage = lazy(() => import('@pages/auth'));
+const RedirectPage = lazy(() => import('@pages/redirect'));
 const ErrorPage = lazy(() => import('@components/ErrorComponent'));
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
             {
                 path: 'auth',
                 element: <AuthPage />,
+            },
+            {
+                path: 'redirect',
+                element: <RedirectPage />,
             },
             {
                 path: 'error',
