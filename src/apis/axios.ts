@@ -18,7 +18,7 @@ export const makePostAccessToken = makePost(accessTokenAxios);
 
 export const postAccessToken = (body: { code: string }) =>
     makePostAccessToken(
-        `https://hjs1002.cafe24api.com/api/v2/oauth/token`,
+        `/api/v2/oauth/token`,
         {
             grant_type: 'authorization_code',
             code: body.code,
