@@ -2,14 +2,14 @@ import axios from 'axios';
 // import { makeGet, makePatch, makePost } from '@/lib/utils';
 import { makePost } from '@/lib/utils';
 
-axios.defaults.withCredentials = true;
-
 export const accessTokenAxios = axios.create({
     baseURL: 'https://hjs1002.cafe24api.com/',
     headers: {
         Authorization: 'Basic TFdmVjVmQm0xRUoxdUtmUHdzT0o1QSA6IDNxNHJPMHVKT1J0aXY2UTdtNEoxYUQ=',
         'Content-Type': 'application/x-www-form-urlencoded',
-        // 'Access-Control-Allow-Origin': '*',
+        // 'Access-Control-Allow-Origin': 'https://hjs1002.cafe24api.com/', // cors origin (서버의 cors 설정이 동일해야 응답)
+        'Access-Control-Allow-Creadentials': true,
+        'Access-Control-Allow-Origin': '*',
     },
     // withCredentials: true,
 });
