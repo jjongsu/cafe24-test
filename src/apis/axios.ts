@@ -3,13 +3,13 @@ import axios from 'axios';
 import { makePost } from '@/lib/utils';
 
 export const accessTokenAxios = axios.create({
-    baseURL: 'https://hjs1002.cafe24api.com/',
+    baseURL: 'https://hjs1002.cafe24api.com',
     headers: {
         Authorization: 'Basic TFdmVjVmQm0xRUoxdUtmUHdzT0o1QTozcTRyTzB1Sk9SdGl2NlE3bTRKMWFE',
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Access-Control-Allow-Origin': 'https://hjs1002.cafe24api.com', // cors origin (서버의 cors 설정이 동일해야 응답)
+        // 'Access-Control-Allow-Origin': 'https://hjs1002.cafe24api.com', // cors origin (서버의 cors 설정이 동일해야 응답)
         'Access-Control-Allow-Creadentials': true,
-        // 'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Origin': '*',
     },
     // withCredentials: true,
 });
@@ -18,7 +18,7 @@ export const makePostAccessToken = makePost(accessTokenAxios);
 
 export const postAccessToken = (body: { code: string }) =>
     makePostAccessToken(
-        `api/v2/oauth/token`,
+        `https://hjs1002.cafe24api.com/api/v2/oauth/token`,
         {
             grant_type: 'authorization_code',
             code: body.code,
