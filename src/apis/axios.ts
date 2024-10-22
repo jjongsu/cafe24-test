@@ -22,7 +22,7 @@ export const postAccessToken = (body: { code: string }) =>
         {
             grant_type: 'authorization_code',
             code: body.code,
-            redirect_uri: 'https://cafe24-hjs1002.vercel.app',
+            redirect_uri: 'https://cafe24-hjs1002.vercel.app/redirect',
         },
         { withCredentials: true }
     );

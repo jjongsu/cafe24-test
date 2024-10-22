@@ -14,7 +14,7 @@ const findHref = (ref: React.RefObject<HTMLAnchorElement>) => {
             mallId +
             '.cafe24api.com/api/v2/oauth/authorize?' +
             'response_type=code&client_id=LWfV5fBm1EJ1uKfPwsOJ5A&state=S256' +
-            '&redirect_uri=https://cafe24-hjs1002.vercel.app' +
+            '&redirect_uri=https://cafe24-hjs1002.vercel.app/redirect' +
             '&scope=mall.read_category,mall.write_product,mall.read_product,mall.write_personal,mall.read_personal,mall.write_community,mall.read_community,mall.write_customer,mall.read_customer,mall.write_notification,mall.read_notification';
         console.log('token url setting', tokenUrl);
         ref.current.href = tokenUrl;
