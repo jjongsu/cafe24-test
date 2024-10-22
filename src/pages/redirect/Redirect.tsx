@@ -20,5 +20,10 @@ export default function Redirect() {
         hasCode();
     }, [hasCode]);
 
-    return <div>Redirect</div>;
+    return (
+        <>
+            <div>Redirect</div>
+            <div>{new URL(window.location.href).searchParams.get('code')}</div>
+        </>
+    );
 }
