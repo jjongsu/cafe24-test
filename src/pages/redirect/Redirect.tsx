@@ -4,7 +4,7 @@ import { useMutation } from '@tanstack/react-query';
 import { useCallback } from 'react';
 
 export default function Redirect() {
-    const { mutateAsync } = useMutation({ onSuccess: () => console.log('success'), mutationFn: postAccessToken });
+    const { mutate } = useMutation({ onSuccess: () => console.log('success'), mutationFn: postAccessToken });
 
     const hasCode = useCallback(() => {
         const url = new URL(window.location.href);
@@ -13,9 +13,9 @@ export default function Redirect() {
         const code = urlParams.get('code');
         if (code) {
             // navigate('/board', { replace: true });
-            mutateAsync({ code });
+            mutate({ code });
         }
-    }, [mutateAsync]);
+    }, [mutate]);
 
     // useEffect(() => {
     //     hasCode();
