@@ -2,6 +2,8 @@ import axios from 'axios';
 // import { makeGet, makePatch, makePost } from '@/lib/utils';
 import { makePost } from '@/lib/utils';
 
+axios.defaults.withCredentials = true;
+
 export const accessTokenAxios = axios.create({
     baseURL: 'https://hjs1002.cafe24api.com/',
     headers: {
@@ -15,11 +17,15 @@ export const accessTokenAxios = axios.create({
 export const makePostAccessToken = makePost(accessTokenAxios);
 
 export const postAccessToken = (body: { code: string }) =>
-    makePostAccessToken(`api/v2/oauth/token`, {
-        grant_type: 'authorization_code',
-        code: body.code,
-        redirect_uri: 'https://cafe24-hjs1002.vercel.app',
-    });
+    makePostAccessToken(
+        `api/v2/oauth/token`,
+        {
+            grant_type: 'authorization_code',
+            code: body.code,
+            redirect_uri: 'https://cafe24-hjs1002.vercel.app',
+        },
+        { withCredentials: true }
+    );
 
 // const makeGetTI = makeGet(client);
 // const makePostTI = makePost(client);
